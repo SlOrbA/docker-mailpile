@@ -1,8 +1,8 @@
 FROM alpine:3.10
-MAINTAINER Rafael Römhild <rafael@roemhild.de>
+MAINTAINER Lari Korpi <lari.korpi@iki.fi>
 
 ENV VERSION 1.0.0rc6
-ENV TZ "Etc/GMT"
+ENV TZ "Etc/UTC"
 ENV MAILPILE_GNUPG/GA "/usr/bin/gpg-agent"
 ENV MAILPILE_GNUPG/DM "/usr/bin/dirmngr"
 ENV MAILPILE_TOR "/usr/bin/tor"
@@ -44,10 +44,10 @@ WORKDIR /Mailpile
 RUN pip install -r requirements.txt
 
 # Initial Mailpile setup
-RUN ./mp setup
+RUN ./mp setup 
 
-CMD ./mp --www=0.0.0.0:33411 --wait
+ENTRYPOINT ./mp --www=0.0.0.0:33411 --wait
 EXPOSE 33411
 
-VOLUME /root/.local/share/Mailpile
-VOLUME /root/.gnupg
+VOLUME /root
+
