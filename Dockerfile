@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM alpine:3
 MAINTAINER Lari Korpi <lari.korpi@iki.fi>
 
 ENV VERSION 1.0.0rc6
