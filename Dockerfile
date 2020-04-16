@@ -47,7 +47,7 @@ WORKDIR /root
 # Initial Mailpile setup
 RUN /Mailpile/mp setup 
 
-ENTRYPOINT ./mp --www=0.0.0.0:33411 --wait
+ENTRYPOINT /Mailpile/mp --www=0.0.0.0:33411 --wait
 EXPOSE 33411
 
 VOLUME /root
