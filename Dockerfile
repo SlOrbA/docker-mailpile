@@ -43,8 +43,9 @@ WORKDIR /Mailpile
 # Install missing requirements
 RUN pip install -r requirements.txt
 
+WORKDIR /root
 # Initial Mailpile setup
-RUN ./mp setup 
+RUN /Mailpile/mp setup 
 
 ENTRYPOINT ./mp --www=0.0.0.0:33411 --wait
 EXPOSE 33411
